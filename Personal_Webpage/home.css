@@ -1,0 +1,40 @@
+ul {
+  position: fixed;
+  line-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow: hidden;
+  background-color: #333;
+  clear: both;
+
+
+}
+
+
+.top_li {
+  float: left;
+  top: 0px;
+
+
+}
+
+.top_li a {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.top_li a:hover {
+  background-color: #111;
+}
+
+body {
+margin: 0px;
+}
+.content {
+  padding-top: 50px;
+
+}
