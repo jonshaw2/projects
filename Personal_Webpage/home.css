@@ -1,40 +1,42 @@
 ul {
-  position: fixed;
   line-style-type: none;
-  margin: 0;
+
   padding: 0;
   width: 100%;
   overflow: hidden;
-  background-color: #333;
-  clear: both;
+  /*background-color: #333;*/
 
 
 }
 
 
 .top_li {
-  float: left;
+
+  text-align: center;
   top: 0px;
+
 
 
 }
 
 .top_li a {
+  position: relative;
   display: inline-block;
+  font-size: 25px;
   color: white;
   text-align: center;
-  padding: 14px 16px;
   text-decoration: none;
+  margin-right: auto;
 }
 
 .top_li a:hover {
-  background-color: #111;
+  /*background-color: #111;*/
+  font-size: 30px;
 }
 
-body {
-margin: 0px;
-}
+
 .content {
-  padding-top: 50px;
+
+
 
 }
