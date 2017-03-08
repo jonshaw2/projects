@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>tic_tac_toe</title>
+    <script src="jquery.js"></script>
+    <script src="tic_tac_toe.js"></script>
+
+
+    <style>
+    button {
+      height: 26.666666vh;
+      width: 33.333333%;
+      float: left;
+      font-size: 28vh;
+      text-align: center;
+      line-height: 31.333333%;
+      border: 2px solid black;
+    }
+    body{
+      margin: 0;
+    }
+    .condition {
+      height: 10vh;
+      width: 100%;
+      border: 2px solid black;
+      text-align: center;
+      line-height: 10vh;
+      font-size: 5vh;
+
+    }
+    .canvas {
+
+      height: 100vh;
+      width: 100%;
+      border: 2px solid black;
+    }
+
+    * { box-sizing: border-box; }
+
+    .bottom {
+      height: 10vh;
+      width: 100%;
+      border: 3px solid black;
+
+    }
+
+    .restart {
+      width: 10%;
+      height: 9vh;
+      float: left;
+      font-size: 4vh;
+      background-color: lightblue;
+    }
+
+    .score {
+      float:right;
+      height: 9vh;
+      font-size: 4vh;
+    }
+
+    .AI {
+      font-size: 4vh;
+
+      height: 9vh;
+      width: 15%;
+      float: left;
+      background-color: yellow;
+    }
+    /*.top_left_line {
+      position: absolute;
+
+      height: 5vh;
+      width: 67%;
+      background-color: red;
+      margin: -5vh 15vw;
+    }
+
+    .mid_left_line {
+      position: absolute;
+
+      height: 5vh;
+      width: 67%;
+      background-color: red;
+      margin: -5vh 15vw;
+    }
+
+    .bot_left_line {
+      position: absolute;
+
+      height: 5vh;
+      width: 67%;
+      background-color: red;
+      margin: -5vh 15vw;
+    }*/
+
+    </style>
+
+
+
+  </head>
+  <body>
+    <div class="canvas">
+      <div class="condition"></div>
+      <div class="tic_buttons">
+        <button class="top_left"></button>
+        <button class="top_mid"></button>
+        <button class="top_right"></button>
+        <button class="mid_left"></button>
+        <button class="mid_mid"></button>
+        <button class="mid_right"></button>
+        <button class="bot_left"></button>
+        <button class="bot_mid"></button>
+        <button class="bot_right"></button>
+
+        <!-- <div class="top_left_line"></div>
+        <div class="mid_left_line"></div> -->
+
+
+
+
+      </div>
+      <div class="bottom"><button class="restart">Restart</button><div class = "AI"><input class="AI_check" type="checkbox">AI TOGGLE</div><div class="score">Player 1: 0 <br> Player 2: 0</div></div>
+    </div>
+  </body>
+</html>
