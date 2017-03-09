@@ -28,7 +28,7 @@ $(document).ready(function() {
     if ($(this).is(':checked')) {
       AI = true;
       console.log(AI);
-      if (player_turn === -1){
+      if (player_turn === -1 ){
         AI_turn();
       }
     }
@@ -45,6 +45,7 @@ $(document).ready(function() {
     player_turn = 1;
     result='none';
     AI_move = false;
+    $('.condition').text("");
     for (i=0; i<3; i++){
       for (j=0; j<3; j++){
         $('.'+tile[i][j]).text("");
@@ -55,15 +56,17 @@ $(document).ready(function() {
   });
 
   $('.tic_buttons').on('click','button',function() {
-    for (i=0;i<tile.length;i++){
-      for (j=0; j<tile[i].length;j++){
+    for (i=0;i<3;i++){
+      for (j=0; j<3;j++){
         if ($(this).hasClass(tile[i][j]) && tile_container[i][j]===0){
           if (player_turn === 1){
             $(this).text('O');
+            console.log('after printing O');
+
             tile_container[i][j]=1;
             player_turn *= -1;
           }
-          else if (player_turn === -1){
+          else if (player_turn === -1 && AI !== true){
             $(this).text('X');
             player_turn *= -1;
             tile_container[i][j]=-1;
@@ -74,28 +77,30 @@ $(document).ready(function() {
 
           }
 
-          console.log(tile[i][j]);
-          win_condition();
 
-          draw = true;
-          for(i=0; i<3;i++){
-            for(j=0; j<3; j++){
-              if (tile_container[i][j] === 0){
-                draw = false;
-              }
-            }
-          }
-          if (draw === true){
-            $('.condition').text("Draw!");
-          }
-
-          if (AI === true && player_turn === -1 && draw === false){
-            AI_turn();
-
-          }
 
         }
       }
+    }
+
+    win_condition();
+
+    draw = true;
+    for(i=0; i<3;i++){
+      for(j=0; j<3; j++){
+        if (tile_container[i][j] === 0){
+          draw = false;
+        }
+      }
+    }
+    if (draw === true){
+      $('.condition').text("Draw!");
+    }
+
+    if (AI === true && player_turn === -1 && draw === false){
+
+      AI_turn();
+
     }
 
 
@@ -103,22 +108,25 @@ $(document).ready(function() {
   });
   function AI_turn(){
     AI_move = false;
+    console.log('before waiting');
+    setTimeout(function(){
 
-    while (AI_move === false){
-      var i = Math.floor(Math.random() * 3);
-      var j = Math.floor(Math.random() * 3);
-      console.log(tile_container);
-      console.log(i);
-      console.log(j);
-      console.log(tile_container[i][j]);
-      if (tile_container[i][j] === 0){
-        tile_container[i][j] = -1;
-        AI_move = true;
-        player_turn *= -1;
-        $('.'+tile[i][j]).text("X");
+      while (AI_move === false){
+        var i = Math.floor(Math.random() * 3);
+        var j = Math.floor(Math.random() * 3);
+        console.log(tile_container);
+        console.log(i);
+        console.log(j);
+        console.log(tile_container[i][j]);
+        if (tile_container[i][j] === 0){
+          tile_container[i][j] = -1;
+          AI_move = true;
+          player_turn *= -1;
+          $('.'+tile[i][j]).text("X");
+        }
+
       }
-
-    }
+    }, 1000);
 
     win_condition();
   }
@@ -177,6 +185,23 @@ $(document).ready(function() {
 
       }
     }
+    if (check[0][0] === check[1][1] && check[1][1] === check[2][2] && check[0][0]!== 0){
+      x_start = i;
+      x_end = i;
+      y_start = 0;
+      y_start = 2;
+      return (player)*-1;
+    }
+
+    if (check[0][2] === check[1][1] && check[1][1] === check[2][0] && check[0][2]!== 0){
+      x_start = i;
+      x_end = i;
+      y_start = 0;
+      y_start = 2;
+      return (player)*-1;
+    }
+
+
     return 'none';
   }
 });
