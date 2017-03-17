@@ -37,7 +37,7 @@
   }
 
   #dealer_score{
-    
+
     height: 4vh;
     width: 90%;
     margin: 0 5% 0 5%;
@@ -93,10 +93,13 @@
   }
 
   .cardImages {
+
     height: 16vh;
     margin: 1vh;
 
   }
+
+
   .deal_button{
     pointer-events: auto;
     background-color: lightblue;
@@ -115,6 +118,62 @@
   .restart_button {
     pointer-events: none;
     background-color: black;
+  }
+
+  .first_card{
+    height: 16vh;
+    margin: 1vh;
+    position: absolute;
+
+    /*-webkit-animation: linear 1;
+    -webkit-animation-name: spin, appear;
+    animation-fill-mode: forwards;
+    -webkit-animation-duration: 2s, 2s;*/
+    opacity: 0;
+  }
+  .hidden_card{
+    height: 16vh;
+    margin: 1vh;
+    position: relative;
+    /*-webkit-animation: linear 1;
+    animation-fill-mode: forwards;
+    -webkit-animation-name: spin, fade;
+    -webkit-animation-duration: 2s, 2s;*/
+    position: relative;
+    opacity: 1;
+  }
+
+
+
+  @-webkit-keyframes spin {
+      50% {
+          -webkit-transform: rotateY(90deg);
+      }
+      100%{
+        50% {
+            -webkit-transform: rotateY(-90deg);
+        }
+      }
+  }
+
+  @-webkit-keyframes fade {
+
+      50% {
+          opacity: 0;
+      }
+      100%{
+          opacity: 0;
+      }
+  }
+
+  @-webkit-keyframes appear {
+
+      49%{
+        opacity: 1;
+      }
+      100%{
+            opacity: 1;
+      }
   }
 
 

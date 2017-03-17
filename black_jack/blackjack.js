@@ -2,7 +2,7 @@ $(document).ready(function(){
   var currentDeck = newDeck();
   shuffleCard();
   $('#dealer-points').hide();
-
+  var firstCardToDisplay;
 
   var dealerCards = []; //cards in dealer's hands
   var playerCards = []; //cards in player's hands
@@ -32,9 +32,25 @@ $(document).ready(function(){
   });
 
   $('#stand-button').click(function(){
-    $('#dealer-points').show();
-    $('.first_card').attr('src','+getCardImageUrl(currentDeck[currentDeck.length-1])');
 
+    // $('#first_card').css('-webkit-animation','spin 2s linear 1');
+    // $('#first_card').css('-moz-animation','spin 2s linear 1');
+    $('.first_card').css('-webkit-animation','linear 1');
+    $('.first_card').css('-webkit-animation-name','spin, appear');
+    $('.first_card').css('animation-fill-mode','forwards');
+    $('.first_card').css('-webkit-animation-duration',' 2s, 2s');
+
+    $('.hidden_card').css('-webkit-animation',' linear 1');
+    $('.hidden_card').css('animation-fill-mode','forwards');
+    $('.hidden_card').css('-webkit-animation-name','spin, fade');
+    $('.hidden_card').css('-webkit-animation-duration','2s, 2s');
+
+    // $('@-moz-keyframes spin').html('50% { -moz-transform: rotateY(90deg); }');
+    // $('@-webkit-keyframes spin').html('50% { -webkit-transform: rotateY(90deg); } ');
+    // $('@keyframes spin').html(' 50% { -webkit-transform: rotateY(90deg); transform:rotateY(90deg); } ');
+
+
+    $('#dealer-points').show();
     currPlayer = 'Dealer';
     while (dealerScore < 17) {
       dealCard();
@@ -86,6 +102,8 @@ $(document).ready(function(){
     $('.restart_button').css('background-color', 'lightblue');
     $('.hit_button').css('pointer-events', 'none');
     $('.hit_button').css('background-color', 'black');
+    $('.stand_button').css('pointer-events', 'none');
+    $('.stand_button').css('background-color', 'black');
   }
 
   function restart() {
@@ -129,7 +147,8 @@ $(document).ready(function(){
       $('#playerHand').append('<img class="cardImages" src="'+cardToDisplay+ '">');
       playerSplice =(currentDeck.pop());
       playerCards.push(playerSplice); //add cards to paleyr's hand
-    }
+
+}
 
     else if(currPlayer === 'Dealer'){
       $('#dealerHand').append('<img class="cardImages" src="'+cardToDisplay+ '">');
@@ -162,7 +181,10 @@ $(document).ready(function(){
       dealerCards.push(dealerSplice); //add cards to dealer's hand
       }
       else if (i===0){
-        $('#dealerHand').append('<img class="cardImages" class="first_card" src="images/card_back.jpg">');
+        firstCardToDisplay = cardToDisplay;
+        $('#dealerHand').append('<img class="first_card" src='+firstCardToDisplay+'>');
+        $('#dealerHand').append('<img class="hidden_card" src="images/card_back.jpg">');
+
         dealerSplice =(currentDeck.pop());
         dealerCards.push(dealerSplice);
 

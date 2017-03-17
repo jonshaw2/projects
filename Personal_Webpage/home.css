@@ -10,7 +10,7 @@ ul {
 }
 
 
-.top_li {
+.webpage_links {
 
   text-align: center;
   top: 0px;
@@ -19,7 +19,7 @@ ul {
 
 }
 
-.top_li a {
+.webpage_links button {
   position: relative;
   display: inline-block;
   font-size: 25px;
@@ -29,9 +29,9 @@ ul {
   margin-right: auto;
 }
 
-.top_li a:hover {
+.webpage_links button:hover {
   /*background-color: #111;*/
-  font-size: 30px;
+  background-color: #B6B4B8;
 }
 
 

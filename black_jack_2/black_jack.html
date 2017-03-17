@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>BlackJack</title>
+    <script src="jquery-3.1.1.js"></script>
+    <script src="black_jack.js"></script>
+  </head>
+
+  <style>
+
+  * {box-sizing: border-box;}
+  .body{
+    margin: 10px;
+  }
+
+  .canvas{
+  position: relative;
+  padding-bottom: 70%;
+  width: 100%;
+
+  }
+  .background_image{
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+
+  }
+  .message_box{
+    position: absolute;
+    width: 100%;
+    height:10vh;
+    background-color: lightblue;
+    border: 2px solid black;
+    text-align: center;
+    font-size: 8vh;
+  }
+
+  .blackjack_table{
+    position: absolute;
+    width: 86%;
+    margin: 15vh 8% 0 8%;
+    height: 63vh;
+  }
+
+  .dealer_card_field{
+    position: absolute;
+    width: 50%;
+    height: 20vh;
+
+    /*background-color: lightblue;*/
+    /*opacity: .5;*/
+    background: rgba(102, 255 , 255, .8);
+    margin: 12vh 25vw 0 25vw;
+  }
+
+  .dealer_card_field img{
+    opacity: 1;
+    height: 18vh;
+    margin: 1% 0 1% 1%;
+  }
+
+  .player_card_field{
+    position: absolute;
+    width: 50%;
+    height: 20vh;
+    background: rgba(102, 255 , 255, .8);
+    margin: 75vh 25vw 0 25vw;
+  }
+
+  .player_card_field img{
+    opacity: 1;
+    height: 18vh;
+    margin: 1% 0 1% 1%;
+  }
+
+  .first_card{
+    position: absolute;
+    opacity: 0;
+    height: 18vh;
+    margin: 1% 0 1% 1%;
+  }
+
+  .buttons{
+    position: absolute;
+    text-align: center;
+    width: 60%;
+    height: 10vh;
+    margin: 66vh 20vw 0 20vw;
+
+  }
+
+  .deal_button{
+    font-size: 5vh;
+  }
+
+  .hit_button{
+    font-size: 5vh;
+  }
+
+  .stand_button{
+    font-size: 5vh;
+  }
+
+  .restart_button{
+    font-size: 5vh;
+  }
+
+  body{
+    margin: 0;
+  }
+  </style>
+  <body>
+    <div class="canvas">
+      <img class = "background_image" src="images/blackjack_background.jpg" alt="">
+      <div class="message_box">testing</div>
+      <img class = "blackjack_table" src="images/blackjack_table.png" alt="">
+      <div class="dealer_card_field"></div>
+      <div class="player_card_field"></div>
+      <div class="buttons">
+        <button class="deal_button" id="deal-button">Deal</button>
+        <button class="hit_button" id="hit-button">Hit</button>
+        <button class="stand_button" id="stand-button">Stand</button>
+        <button class="restart_button" id="restart-button">Restart</button>
+      </div>
+
+    </div>
+  </body>
+</html>
