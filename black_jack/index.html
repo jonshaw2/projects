@@ -146,17 +146,21 @@
 
 
   @-webkit-keyframes spin {
+
       50% {
           -webkit-transform: rotateY(90deg);
       }
+
       100%{
-        50% {
-            -webkit-transform: rotateY(-90deg);
+            -webkit-transform: rotateY(0deg);
         }
       }
   }
 
   @-webkit-keyframes fade {
+      49% {
+          opacity: 1;
+      }
 
       50% {
           opacity: 0;
@@ -167,12 +171,14 @@
   }
 
   @-webkit-keyframes appear {
-
       49%{
-        opacity: 1;
+        opacity: 0;
+      }
+      50%{
+        opacity: 0;
       }
       100%{
-            opacity: 1;
+        opacity: 1;
       }
   }
 

@@ -5,22 +5,33 @@
     <title>Jonathan Shaw</title>
     <script src="jquery-3.1.1.js"></script>
     <link rel="stylesheet" href="home.css">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css">
+    <link rel="stylesheet" href="w3.css">
     <script src="main.js"></script>
 
 
     <style>
-    .top{
-      position: absolute;
-      margin: 0 0 0 0;
-      height: 350px;
-      width: 100%;
 
+    .canvas{{
+
+      position: absolute;
+      float: left;
+      background-size: cover;
+      background-repeat: no-repeat;
+      width: 100%;
+      height: auto;
+      min-height: 950px;
 
     }
 
+    }
 
+    .top{
+      position: absolute;
+      margin: 0 0 0 0;
+      height: 150px;
+      width: 100%;
 
+    }
     .top_content{
       width: 100%;
 
@@ -30,38 +41,61 @@
       position: absolute;
       margin-left: auto;
       margin-right: auto;
-      margin-top: 25px;
+      margin-top: 200px;
       width: 100%;
       color: white;
       text-align: center;
       font-size: 35px;
     }
-
-    .github_link{
-      padding: 20px;
+    .title_text{
+      position: absolute;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 280px;
+      width: 100%;
+      color: white;
+      text-align: center;
+      font-size: 15px;
     }
 
-    .github_link a img{
-      width: 50px
+
+
+    .taco{
+      padding: 20px 20px 20px 0;
+      position: relative;
+      float:left;
+    }
+    .top_link_box{
+
+    }
+    .taco img{
+      width: 50px;
+      background: none;
     }
 
-    .github_link a img:hover{
-      width: 80px;
+    .taco button{
+      background-color: transparent;
+      background-repeat:no-repeat;
+      border: none;
+      cursor:pointer;
+      overflow: hidden;
+      outline:none;
     }
-
     .middle{
       position: absolute;
-      margin: 250px 0 0 0;
-      height: 450px;
+      margin: 150px 0 0 0;
+      height: auto;
       width: 100%;
+
 
 
     }
     .mid_content{
+
       position: absolute;
       height: 450px;
-      border-top: 3px solid white;
-      border-bottom: 3px solid white;
+      /*border-top: 3px solid white;
+      border-bottom: 3px solid white;*/
       margin: 0 15% 0 15%;
 
       width: 70%;
@@ -75,32 +109,36 @@
 
     .about{
       position: absolute;
-      height: 600px;
-      border-top: 3px solid white;
-      border-bottom: 3px solid white;
-      margin: -150px 15% 0 15%;
+      height: auto;
+      /*border-top: 3px solid white;
+      border-bottom: 3px solid white;*/
+      margin: 0px 20% 0 20%;
       animation-fill-mode: forwards;
-      width: 70%;
-      font-size: 30px;
+      width: 60%;
+      font-size: 100%;
       color: white;
       text-align: left;
       opacity: 0;
+      visibility: hidden;
+      padding: 15px;
       background: rgba(0, 0 , 0, .5);
 
     }
 
     .portfolio{
       position: absolute;
-      height: 600px;
-      border-top: 3px solid white;
-      border-bottom: 3px solid white;
-      margin: -150px 20% 0 20%;
+      height: 600;
+      max-height: auto;
+      /*border-top: 3px solid white;
+      border-bottom: 3px solid white;*/
+      margin: 0px 20% 0 20%;
 
       width: 60%;
       font-size: 30px;
       color: white;
       text-align: left;
       opacity: 0;
+      visibility: hidden;
       background: rgba(0, 0 , 0, .5);
 
     }
@@ -109,10 +147,10 @@
     .item1{
       position: relative;
       width: 100%;
-      margin: 10px 0 0 0;
+      margin: 30px 0 0 0;
       margin-left: auto;
       margin-right: auto;
-      height: 600px;
+      height: auto;
       text-align: center;
 
     }
@@ -124,45 +162,75 @@
       margin-left: auto;
       margin-right: auto;
 
-      max-height: 400px;
+      max-height: 380px;
       max-width: 80%;
       height: auto;
       width: auto;
-
-
-
     }
 
 
     .portfolio .portfolio_text{
-      position: absolute;
-      height: auto
+      position: relative;
+      height: auto;
       margin: auto;
       font-size: 15px;
-      padding: 0px 10% 0 10%;
+      padding: 20px 10% 20px 10%;
       text-align: center;
-      bottom: 40px;
+
 
 
     }
     .portfolio button{
+    position: absolute;
     background: none;
     font-size: 50px;
     color: white;
     }
 
     .contact{
-      position: absolute;
-      height: 300px;
-      border:3px solid white;
-      margin: 150px 35% 0 35%;
+      position: relative;
+      height: 600px;
+      min-height: 350px;
+      min-width: 300px;
+      /*border:  3px solid white;*/
+      margin: 0px auto;
+
+      text-align: center;
       animation-fill-mode: forwards;
-      width: 30%;
-      font-size: 30px;
+      width: 60%;
+      font-size: 15px;
       color: white;
-      text-align: left;
       opacity: 0;
+      visibility: hidden;
       background: rgba(0, 0 , 0, .5);
+    }
+
+    .contact_text{
+      font-size: 25px;
+      width: 60%;
+      border-bottom: 1px solid white;
+      padding: 130px 0 5px 15px;
+      margin: 0 20% 0 20%;
+      text-align: center;
+
+    }
+    .contact_info{
+      font-size: 15px;
+      text-align: middle;
+      width: 30%;
+      padding: 150px 0 0 15px;
+      margin: 0 35% 0 35%;
+    }
+
+    .contact_link{
+      position: absolute;
+      float:left;
+      padding: 20px;
+
+    }
+
+    .contact_link a img{
+      width: 30px
     }
 
     .bottom{
@@ -175,14 +243,14 @@
     }
     .background{
       z-index: -2;
-
-      position: absolute;
+      position: fixed;
       background-image: url("image/background.jpg");
       float: left;
       background-size: cover;
       background-repeat: no-repeat;
       width: 100%;
-      height: 950px;
+      height: auto;
+      min-height: 950px;
 
     }
     .snow{
@@ -190,34 +258,41 @@
     }
 
     .body{
+      position: absolute;
       margin: 0;
       text-align: center;
-      background-color: red;
+
     }
 
     .webpage_links{
-      display: inline-block;
+
+      position: absolute;
+
       text-align: center;
       width: 80%;
-      margin: 0 10% 0 10%;
+      margin: 50px 10% 0 10%;
 
     }
     .webpage_links button{
-      font-size: 20px;
-      margin: 10px 10px 0 10px;
-      color: #2E7AB7;
+      font-size: 15px;
+      margin: 0px 5px 0 5px;
+      color: #ffbb33;
       background: none;
-      padding: 0;
+      padding: 3px;
       border: none;
       text-decoration: none;
 
     }
+    /*.webpage_links button:hover{
+      background: #B6B4B8!important;
+    }*/
+
     .run-animation-fade{
-      -webkit-animation: fade .5s linear 1;
+      -webkit-animation: fade .25s linear;
       animation-fill-mode: forwards;
     }
     .run-animation-appear{
-      -webkit-animation: appear .5s linear 1;
+      -webkit-animation: appear .25s linear;
       animation-fill-mode: forwards;
     }
 
@@ -233,23 +308,48 @@
         }
     }
 
+  button:focus{
+    outline:0;
+
+  }
+  button::-moz-focus-inner {
+    border: 0;
+  }
+
+
     </style>
   </head>
   <body>
-    <div class="background">
-      <div class="title">Jonathan Shaw</div>
+    <div class="background"></div>
+    <div class="canvas">
       <div class="top">
         <div class="top_content">
-          <div class="github_link"><a href="https://github.com/jonshaw2"><img src="image/rund_github.png" alt=""></a></div>
+          <div class="top_link">
+            <div class="taco"><button class="taco_toggle"><img src="image/taco.png" alt=""></button></div>
+          </div>
+          <div class="webpage_links">
+            <ul>
+              <button id="home" type="button" name="button">HOME</button>
+              <button id="about" type="button" name="button">ABOUT</button>
+              <button id="portfolio" type="button" name="button">PORTFOLIO</button>
+              <button id="contact" type="button" name="button">CONTACT</button>
+              <button id="resume" type="button" name="button">RESUME</button>
+            </ul>
+          </div>
         </div>
       </div>
       <div class="middle">
           <div class="mid_content">
-
+            <div class="title">Jonathan Shaw</div>
+            <div class="title_text">Full Stack developer</div>
           </div>
 
           <div class="about">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            I'm a Full Stack Web Developer based around Atlanta, GA. I attended Georgia Institute of Technology for my undergraduate degree where I majored in Industrial Engineering. After graduation I held a variety of positions from IT support to designing an assembly line in China. I soon discovered my passion for coding. <br>
+            I quickly discovered similarities between the two process, but now instead of providing instructions for how many times for a worker to rotate a screw, I am now providing instructions for how many times for a computer to traverse a loop.<br>
+            I decided I was ready for a new challenge and moved on to web development.
+            Through analyzing online resources and lots of trial and error, I was able to create simple programs with simple functionality. To move on to the next step and to learn how to program professionally, I enrolled in DigitalCrafts' full-time full-stack immersive coding bootcamp in February of 2017.
+            To see what I've been working on check out my portfolio!
           </div>
 
           <div class="portfolio">
@@ -265,27 +365,27 @@
                 rem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
               </div></div>
 
+              <button class="w3-button w3-display-left">&#10094;</button>
+              <button class="w3-button w3-display-right">&#10095;</button>
+
             </div>
-                <button class="w3-button w3-display-left">&#10094;</button>
-                <button class="w3-button w3-display-right">&#10095;</button>
+
           </div>
 
           <div class="contact">
+            <div class="contact_text">Get in touch</div>
+            <div class="contact_info">Joanthan Shaw <br>
+                                      <a href="mailto:jonathan.y.shaw@gmail.com">jonathan.y.shaw@gmail.com</a><br>
+            <div class="contact_link"><a href="https://github.com/jonshaw2"><img src="image/rund_github.png" alt=""></a></div>
+                                    </div>
+
           </div>
       </div>
 
       <div class="bottom">
 
 
-        <div class="webpage_links">
-          <ul>
-              <button id="home" type="button" name="button">HOME</button>
-              <button id="about" type="button" name="button">ABOUT</button>
-              <button id="portfolio" type="button" name="button">PORTFOLIO</button>
-              <button id="contact" type="button" name="button">CONTACT</button>
-              <button id="resume" type="button" name="button">RESUME</button>
-          </ul>
-        </div>
+
       </div>
     </div>
   </body>

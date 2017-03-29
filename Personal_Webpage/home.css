@@ -11,32 +11,6 @@ ul {
 
 
 .webpage_links {
-
   text-align: center;
-  top: 0px;
-
-
-
-}
-
-.webpage_links button {
-  position: relative;
-  display: inline-block;
-  font-size: 25px;
-  color: white;
-  text-align: center;
-  text-decoration: none;
-  margin-right: auto;
-}
-
-.webpage_links button:hover {
-  /*background-color: #111;*/
-  background-color: #B6B4B8;
-}
-
-
-.content {
-
-
 
 }

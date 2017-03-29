@@ -1,45 +1,38 @@
 $(document).ready(function(){
   var lastButtonPressed = '.mid_content';
   var slideIndex = 1;
-
+  var lastButton = 'test';
+  var backgroundAnimation = "image/snow.png";
+  var backgroundOpacity = 0.2;
+  changeButton('#home');
 
 
 
   $("#home").click(function(){
-    $('.title').text("Jonathan Shaw");
     remove_animation();
-    run_animation('.mid_content');
-
+    run_animation('.mid_content','#home');
   });
+
 
   $("#portfolio").click(function(){
-    $('.title').text("Portfolio");
     remove_animation();
-    run_animation('.portfolio');
-
+    run_animation('.portfolio','#portfolio');
   });
 
-
-
   $("#about").click(function() {
-    $('.title').text("Jonathan Shaw");
-    remove_animation();
-    run_animation('.about');
 
+    remove_animation();
+    run_animation('.about','#about');
   });
 
   $("#contact").click(function() {
-    $('.title').text("Contact");
     remove_animation();
-    run_animation('.contact');
-
+    run_animation('.contact','#contact');
   });
 
   $("#resume").click(function() {
     var pdf = ('Jonathan_Shaw_resume.pdf');
     window.open(pdf);
-
-
   });
 
   $(".w3-display-left").click(function(){
@@ -48,13 +41,34 @@ $(document).ready(function(){
 
   $(".w3-display-right").click(function(){
     plusDivs(1);
-    console.log('test');
   });
 
+  $(".taco_toggle").click(function(){
+    if (backgroundAnimation === ("image/snow.png")){
+      backgroundAnimation = "image/taco.png";
+      $(".taco_toggle img").attr('src','image/snow.png');
+      backgroundOpacity = 1;
+    }
+    else{
+      backgroundAnimation ="image/snow.png";
+      $(".taco_toggle img").attr('src','image/taco.png');
+      backgroundOpacity = 0.2;
+    }
 
+    for (var i=0; i<10; i++){
+      console.log('test');
+      $(".snow"+i).attr('src',backgroundAnimation);
+      $(".snow"+i).css("opacity",backgroundOpacity);
+    }
+  });
+
+  function changeButton(button_class){
+    $(lastButton).css('background','none');
+    lastButton = button_class;
+    $(button_class).css('background','#333333');
+  }
 
   function plusDivs(n) {
-    console.log('test');
     showDivs(slideIndex += n);
   }
 
@@ -70,20 +84,27 @@ $(document).ready(function(){
   }
 
 
-  function run_animation(showContent){
+  function run_animation(showContent, contentId){
     if (lastButtonPressed != showContent){
+      $(lastButtonPressed).css('visibility','visibile');
+      $(showContent).css('visibility','visible');
+
 
       $(lastButtonPressed).css('opacity','1');
       setTimeout(function(){
+        changeButton(contentId);
         $(lastButtonPressed).addClass('run-animation-fade');
       }, 1);
 
       setTimeout(function(){
+        remove_animation();
         $(showContent).css('opacity','0');
         $(showContent).addClass('run-animation-appear');
         $(lastButtonPressed).css('opacity','0');
+        changeButton(contentId);
+        $(lastButtonPressed).css('visibility','hidden');
         lastButtonPressed = showContent;
-      }, 501);
+      }, 251);
     }
     else{
     $(lastButtonPressed).css('opacity','1');
@@ -142,10 +163,10 @@ $(document).ready(function(){
 
       }
     function snowing(sheight, swidth, snowCount, speed){
+      var heightlimit = $(".background").innerHeight()-100;
 
 
-
-      if (sheight <= window.innerHeight-100){
+      if (sheight <= heightlimit){
 
         sheight += speed;
 

@@ -35,15 +35,20 @@ $(document).ready(function(){
 
     // $('#first_card').css('-webkit-animation','spin 2s linear 1');
     // $('#first_card').css('-moz-animation','spin 2s linear 1');
+
     $('.first_card').css('-webkit-animation','linear 1');
-    $('.first_card').css('-webkit-animation-name','spin, appear');
+    $('.first_card').css('-webkit-animation-name','spin');
     $('.first_card').css('animation-fill-mode','forwards');
-    $('.first_card').css('-webkit-animation-duration',' 2s, 2s');
+    $('.first_card').css('-webkit-animation-duration',' 1s');
 
     $('.hidden_card').css('-webkit-animation',' linear 1');
     $('.hidden_card').css('animation-fill-mode','forwards');
-    $('.hidden_card').css('-webkit-animation-name','spin, fade');
-    $('.hidden_card').css('-webkit-animation-duration','2s, 2s');
+    $('.hidden_card').css('-webkit-animation-name','spin');
+    $('.hidden_card').css('-webkit-animation-duration','1s');
+    setTimeout(function(){
+      $('.first_card').css('opacity','1');
+      $('.hidden_card').css('opacity','0');
+    }, 500);
 
     // $('@-moz-keyframes spin').html('50% { -moz-transform: rotateY(90deg); }');
     // $('@-webkit-keyframes spin').html('50% { -webkit-transform: rotateY(90deg); } ');
