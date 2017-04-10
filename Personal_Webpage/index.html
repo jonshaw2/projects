@@ -81,15 +81,14 @@
       overflow: hidden;
       outline:none;
     }
+
     .middle{
       position: absolute;
       margin: 150px 0 0 0;
       height: auto;
       width: 100%;
-
-
-
     }
+
     .mid_content{
 
       position: absolute;
@@ -105,13 +104,9 @@
       opacity: 1;
     }
 
-
-
     .about{
       position: absolute;
       height: auto;
-      /*border-top: 3px solid white;
-      border-bottom: 3px solid white;*/
       margin: 0px 20% 0 20%;
       animation-fill-mode: forwards;
       width: 60%;
@@ -125,12 +120,44 @@
 
     }
 
+    .about_image{
+
+    }
+    .about_image img{
+      position: relative;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 10px;
+      max-height: 380px;
+      max-width: 80%;
+      text-align: center;
+      width: 200px;
+    }
+
+    .about_text{
+      margin-top: 30px;
+    }
+
+    .skill{
+      position: absolute;
+      height: auto;
+      margin: 0px 20% 0 20%;
+      animation-fill-mode: forwards;
+      width: 60%;
+      font-size: 100%;
+      color: white;
+      text-align: left;
+      opacity: 0;
+      visibility: hidden;
+      padding: 15px;
+      background: rgba(0, 0 , 0, .5);
+    }
+
     .portfolio{
       position: absolute;
       height: 600;
       max-height: auto;
-      /*border-top: 3px solid white;
-      border-bottom: 3px solid white;*/
       margin: 0px 20% 0 20%;
 
       width: 60%;
@@ -192,9 +219,7 @@
       height: 600px;
       min-height: 350px;
       min-width: 300px;
-      /*border:  3px solid white;*/
       margin: 0px auto;
-
       text-align: center;
       animation-fill-mode: forwards;
       width: 60%;
@@ -331,6 +356,7 @@
             <ul>
               <button id="home" type="button" name="button">HOME</button>
               <button id="about" type="button" name="button">ABOUT</button>
+              <button id="skill" type="button" name="button">SKILLS</button>
               <button id="portfolio" type="button" name="button">PORTFOLIO</button>
               <button id="contact" type="button" name="button">CONTACT</button>
               <button id="resume" type="button" name="button">RESUME</button>
@@ -345,24 +371,34 @@
           </div>
 
           <div class="about">
+            <div class = "about_image">
+              <img src="image/webpage_profile_image.jpg" alt="">
+            </div>
+            <div class = "about_text">
             I'm a Full Stack Web Developer based around Atlanta, GA. I attended Georgia Institute of Technology for my undergraduate degree where I majored in Industrial Engineering. After graduation I held a variety of positions from IT support to designing an assembly line in China. I soon discovered my passion for coding. <br>
             I quickly discovered similarities between the two process, but now instead of providing instructions for how many times for a worker to rotate a screw, I am now providing instructions for how many times for a computer to traverse a loop.<br>
             I decided I was ready for a new challenge and moved on to web development.
             Through analyzing online resources and lots of trial and error, I was able to create simple programs with simple functionality. To move on to the next step and to learn how to program professionally, I enrolled in DigitalCrafts' full-time full-stack immersive coding bootcamp in February of 2017.
             To see what I've been working on check out my portfolio!
+            </div>
+          </div>
+
+          <div class="skill">
+
+
           </div>
 
           <div class="portfolio">
 
             <div class="item1">
               <div class="mySlides"><img src="image/mini_games.jpg" alt=""><div class="portfolio_text">Mini Games<br><br>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, e eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                this mini-game is coded using python, it is the first pygame I have created where player is able to play four mini-game at the same time.  This is made available by dividing the canvas into four separate blocks, each block initiating a separate instance of a function running a different game.  By constantly listening for different player inputs, the game was created and was able to be enjoyed.
               </div></div>
               <div class="mySlides"><img src="image/blackjack.jpg" alt=""><div class="portfolio_text">BlackJack<br><br>
-                 ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                 This is a blackjack game I created during a pair-programming exercise, it is coded using javascript, html, and jQuery.  It also contains my first experiment playing around with simple animation where the card spins during card releaving.
               </div></div>
               <div class="mySlides"><img src="image/tic_tac_toe.jpg" alt=""><div class="portfolio_text">tic_tac_toe<br><br>
-                rem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                This is a simple tic-tac-toe game I created during class, it is coded using javascript, html, and jQuery.  It is implemented with a toggleable AI that can play against the player by playing randomly.
               </div></div>
 
               <button class="w3-button w3-display-left">&#10094;</button>
@@ -375,9 +411,9 @@
           <div class="contact">
             <div class="contact_text">Get in touch</div>
             <div class="contact_info">Joanthan Shaw <br>
-                                      <a href="mailto:jonathan.y.shaw@gmail.com">jonathan.y.shaw@gmail.com</a><br>
-            <div class="contact_link"><a href="https://github.com/jonshaw2"><img src="image/rund_github.png" alt=""></a></div>
-                                    </div>
+              <a href="mailto:jonathan.y.shaw@gmail.com">jonathan.y.shaw@gmail.com</a><br>
+              <div class="contact_link"><a href="https://github.com/jonshaw2" target="_blank"><img src="image/rund_github.png" alt=""></a></div>
+            </div>
 
           </div>
       </div>

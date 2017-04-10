@@ -13,6 +13,10 @@ $(document).ready(function(){
     run_animation('.mid_content','#home');
   });
 
+  $("#skill").click(function(){
+    remove_animation();
+    run_animation('.skill','#skill');
+  });
 
   $("#portfolio").click(function(){
     remove_animation();
@@ -113,7 +117,7 @@ $(document).ready(function(){
 
 
   function remove_animation(){
-    var classes = [".mid_content",".about",".portfolio",".contact"];
+    var classes = [".mid_content",".about",".portfolio",".contact", ".skill"];
 
     for (var i = 0; i<classes.length; i++){
       $(classes[i]).removeClass('run-animation-fade');
