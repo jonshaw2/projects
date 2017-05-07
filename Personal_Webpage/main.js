@@ -60,7 +60,6 @@ $(document).ready(function(){
     }
 
     for (var i=0; i<10; i++){
-      console.log('test');
       $(".snow"+i).attr('src',backgroundAnimation);
       $(".snow"+i).css("opacity",backgroundOpacity);
     }

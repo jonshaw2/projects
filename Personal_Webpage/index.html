@@ -141,6 +141,7 @@
 
     .skill{
       position: absolute;
+      display: inline;
       height: auto;
       margin: 0px 20% 0 20%;
       animation-fill-mode: forwards;
@@ -153,6 +154,25 @@
       padding: 15px;
       background: rgba(0, 0 , 0, .5);
     }
+
+    .skill_content{
+      text-align: left;
+      width: 100%;
+      height: auto;
+      padding-bottom: 50px;
+    }
+
+    @media screen and (min-width: 750px) {
+      .skill_content{
+        text-align: middle;
+        float: left;
+        width: 33%;
+        height: auto;
+      }
+    }
+
+
+
 
     .portfolio{
       position: absolute;
@@ -190,19 +210,26 @@
       margin-right: auto;
 
       max-height: 380px;
-      max-width: 80%;
+      max-width: 70%;
       height: auto;
       width: auto;
     }
 
+    .portfolio .portfolio_link{
+      position: relative;
+      height: auto;
+      margin: auto;
+      font-size: 15px;
+      padding: 20px 17% 20px 17%;
+    }
 
     .portfolio .portfolio_text{
       position: relative;
       height: auto;
       margin: auto;
       font-size: 15px;
-      padding: 20px 10% 20px 10%;
-      text-align: center;
+      padding: 20px 17% 20px 17%;
+      text-align: left;
 
 
 
@@ -213,6 +240,8 @@
     font-size: 50px;
     color: white;
     }
+
+
 
     .contact{
       position: relative;
@@ -242,20 +271,21 @@
     .contact_info{
       font-size: 15px;
       text-align: middle;
-      width: 30%;
+      width: 80%;
       padding: 150px 0 0 15px;
-      margin: 0 35% 0 35%;
+      margin: 0 10% 0 10%;
     }
 
     .contact_link{
-      position: absolute;
-      float:left;
-      padding: 20px;
-
+      display: inline-block;
+      width: auto;
+      padding-top: 20px;
+      margin: 0 1% 0 1%;
     }
 
     .contact_link a img{
-      width: 30px
+      width: 30px;
+      height: 30px;
     }
 
     .bottom{
@@ -288,6 +318,7 @@
       text-align: center;
 
     }
+
 
     .webpage_links{
 
@@ -375,31 +406,64 @@
               <img src="image/webpage_profile_image.jpg" alt="">
             </div>
             <div class = "about_text">
-            I'm a Full Stack Web Developer based around Atlanta, GA. I attended Georgia Institute of Technology for my undergraduate degree where I majored in Industrial Engineering. After graduation I held a variety of positions from IT support to designing an assembly line in China. I soon discovered my passion for coding. <br>
-            I quickly discovered similarities between the two process, but now instead of providing instructions for how many times for a worker to rotate a screw, I am now providing instructions for how many times for a computer to traverse a loop.<br>
-            I decided I was ready for a new challenge and moved on to web development.
-            Through analyzing online resources and lots of trial and error, I was able to create simple programs with simple functionality. To move on to the next step and to learn how to program professionally, I enrolled in DigitalCrafts' full-time full-stack immersive coding bootcamp in February of 2017.
-            To see what I've been working on check out my portfolio!
+              My name is Jonathan Shaw, and I am a Full Stack Web Developer based in Atlanta, GA. I attended the Georgia Institute of Technology for my undergraduate degree where I majored in Industrial Engineering. After graduation I held a variety of positions from IT support to designing assembly lines in Shenzhen, China. It wasn't long before my passion for coding was discovered.<br>
+              <!-- While working in the IT support position, I gained experience communicating with users, understanding their needs and requirements. -->
+              Transitioning from the manufacturing field into the programming field, I noticed similarities between the two skill sets.  Instead of creating working instructions for how many times a worker needs to rotate a screw, I am now providing instructions for how many times a computer needs to traverse a loop.<br>
+              I decided I was ready for a new challenge and moved on to web development. Through self-studying using online resources and motivation, I was able to develop simple programs with simple functions. In order to progress and code professionally, I enrolled in DigitalCrafts' full-time full-stack immersive coding bootcamp since February of 2017. To see what I've been working on, please check out my portfolio.
             </div>
           </div>
 
           <div class="skill">
-
-
+            <div class = "skill_content">
+              <h3>Frontend</h3>
+                Html5<br>
+                CSS<br>
+                Bootstrap<br>
+                Javascript/jquery<br>
+                AJAX/JSON<br>
+                Responsive Design<br>
+            </div>
+            <div class = "skill_content">
+              <h3>Backend</h3>
+                Node.js<br>
+                Express<br>
+                MySQL<br>
+                Python<br>
+            </div>
+            <div class = "skill_content">
+              <h3>Development Tools</h3>
+                Amazon Web Services (AWS)<br>
+                Git<br>
+                Postgres<br>
+            </div>
           </div>
 
           <div class="portfolio">
 
             <div class="item1">
-              <div class="mySlides"><img src="image/mini_games.jpg" alt=""><div class="portfolio_text">Mini Games<br><br>
-                this mini-game is coded using python, it is the first pygame I have created where player is able to play four mini-game at the same time.  This is made available by dividing the canvas into four separate blocks, each block initiating a separate instance of a function running a different game.  By constantly listening for different player inputs, the game was created and was able to be enjoyed.
+              <div class ="mySlides"><img src="image/huddleup.jpg" alt="">
+                <div class="portfolio_link">
+                  <a href="http://letshuddleup.net/" target="_blank">HuddleUp</a><br>
+                  <a href="https://github.com/jonshaw2/Huddle-Up" target="_blank">GitHub</a>
+                </div>
+                <div class="portfolio_text">HuddleUp is an full-stack project coded in javascript and html.  It is a database heavy project with constant communication between front-end and back-end using express.<br>
+
+                HuddleUp itself is a little league team management helper, it allows users to create an account and then either create/join a team for their children.  In the team page users can view team rosters, send messages to other team members and view upcoming events.  Owners of the team will have special access to functions such as creating an event or sending a text message to all related members of the team.
+
+                </div>
+              </div>
+
+              <div class="mySlides"><img src="image/mini_games.jpg" alt=""><div class="portfolio_link">Mini Games<br>
+                <a href="https://github.com/jonshaw2/pygame_mini_games" target="_blank"> GitHub</a>
+                <a href="https://youtu.be/-gwLC9D6uoM" target="_blank">Video Demo</a></div><div class="portfolio_text">
+                This mini-game is coded using python using pygame. The player will be able to play four mini-game at once.  This is made capable by dividing the canvas into four separate blocks, each block initiating a separate instance of a class running a different game.  Each game is running its own algorithm and game logic.
               </div></div>
-              <div class="mySlides"><img src="image/blackjack.jpg" alt=""><div class="portfolio_text"><a href="http://blackjack.jonathanyshaw.com" target="_blank">BlackJack</a><br><br>
-                 This is a blackjack game I created during a pair-programming exercise, it is coded using javascript, html, and jQuery.  It also contains my first experiment playing around with simple animation where the card spins during card releaving.
-              </div></div>
-              <div class="mySlides"><img src="image/tic_tac_toe.jpg" alt=""><div class="portfolio_text">tic_tac_toe<br><br>
-                This is a simple tic-tac-toe game I created during class, it is coded using javascript, html, and jQuery.  It is implemented with a toggleable AI that can play against the player by playing randomly.
-              </div></div>
+              <div class="mySlides"><img src="image/blackjack.jpg" alt=""><div class="portfolio_link">
+                <a href="http://blackjack.jonathanyshaw.com" target="_blank">BlackJack<br></a>
+                <a href="https://github.com/jonshaw2/black_jack" target="_blank">GitHub</a></div><div class="portfolio_text">
+                 This is a blackjack game created using javascript, html, and jQuery during a pair-programming exercise.  This is where our group explored creating simple animation, game logic, and image transformation.
+                 </div></div>
+
 
               <button class="w3-button w3-display-left">&#10094;</button>
               <button class="w3-button w3-display-right">&#10095;</button>
@@ -413,6 +477,9 @@
             <div class="contact_info">Joanthan Shaw <br>
               <a href="mailto:jonathan.y.shaw@gmail.com">jonathan.y.shaw@gmail.com</a><br>
               <div class="contact_link"><a href="https://github.com/jonshaw2" target="_blank"><img src="image/rund_github.png" alt=""></a></div>
+              <div class="contact_link"><a href="mailto:jonathan.y.shaw@gmail.com" target="_blank"><img src="image/gmail.png" alt=""></a></div>
+              <div class="contact_link"><a href="http://www.linkedin.com/in/jonathan-shaw-b6718670" target="_blank"><img src="image/linkedin.png" alt=""></a></div>
+              <div class="contact_link"><a href="Jonathan_Shaw_resume.pdf" target="_blank"><img src="image/resume.jpg" alt=""></a></div>
             </div>
 
           </div>
@@ -421,8 +488,8 @@
       <div class="bottom">
 
 
-
       </div>
     </div>
+
   </body>
 </html>
