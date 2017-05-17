@@ -306,8 +306,23 @@
       width: 100%;
       height: auto;
       min-height: 950px;
-
     }
+
+    @media screen and (min-width: 750px) {
+      .background{
+        z-index: -2;
+        position: fixed;
+        background-image: url("image/background.jpg");
+        float: left;
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 100vh;
+
+        min-height: 950px;
+      }
+    }
+
+
     .snow{
       z-index: -1;
     }
@@ -450,9 +465,10 @@
                   <a href="http://letshuddleup.net/" target="_blank">HuddleUp</a><br>
                   <a href="https://github.com/jonshaw2/Huddle-Up" target="_blank">GitHub</a>
                 </div>
-                <div class="portfolio_text">HuddleUp is an full-stack project coded in javascript and html.  It is a database heavy project with constant communication between front-end and back-end using express.<br>
+                <div class="portfolio_text">
+                HuddleUp itself is a little league team management helper, it allows users to create an account and then either create/join a team for their children.  In the team page users can view team rosters, send messages to other team members and view upcoming events.  Owners of the team will have special access to functions such as creating an event or sending a text message to all related members of the team.<br><br>
 
-                HuddleUp itself is a little league team management helper, it allows users to create an account and then either create/join a team for their children.  In the team page users can view team rosters, send messages to other team members and view upcoming events.  Owners of the team will have special access to functions such as creating an event or sending a text message to all related members of the team.
+                HuddleUp is an full-stack project coded in javascript and html.  It is a database heavy project with constant communication between front-end and back-end using express.
 
                 </div>
               </div>
@@ -460,12 +476,12 @@
               <div class="mySlides"><img src="image/mini_games.jpg" alt=""><div class="portfolio_link">Mini Games<br>
                 <a href="https://github.com/jonshaw2/pygame_mini_games" target="_blank"> GitHub</a>
                 <a href="https://youtu.be/-gwLC9D6uoM" target="_blank">Video Demo</a></div><div class="portfolio_text">
-                This mini-game is coded using python using pygame. The player will be able to play four mini-game at once.  This is made capable by dividing the canvas into four separate blocks, each block initiating a separate instance of a class running a different game.  Each game is running its own algorithm and game logic.
+                This mini-game is coded using Python using Pygame. The player will be able to play four mini games at once.  This is made capable by dividing the canvas into four separate blocks, each block initiating a separate instance of a class running a different game.  Each game is running its own algorithm and game logic.
               </div></div>
               <div class="mySlides"><img src="image/blackjack.jpg" alt=""><div class="portfolio_link">
                 <a href="http://blackjack.jonathanyshaw.com" target="_blank">BlackJack<br></a>
                 <a href="https://github.com/jonshaw2/black_jack" target="_blank">GitHub</a></div><div class="portfolio_text">
-                 This is a blackjack game created using javascript, html, and jQuery during a pair-programming exercise.  This was a group project that explored creating simple animation, game logic, and image transformation.
+                 This is a Blackjack game created using JavaScript, HTML, and jQuery during a pair-programming exercise.  This was a group project that explored creating simple animation, game logic, and image transformation.
                  </div></div>
 
 
