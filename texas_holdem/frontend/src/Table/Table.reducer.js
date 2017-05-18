@@ -1,5 +1,5 @@
 const INITIAL_STATE = {
-  currentStatus: 'waiting',
+  currentStatus: 'Waiting',
   Seat: [false,false],
   category: [],
   deck: [],
@@ -63,7 +63,8 @@ function reducer(state = INITIAL_STATE, action){
     console.log(newPlayerHand);
     return Object.assign({},state,{
       playerHand: newPlayerHand,
-      deck: deck
+      deck: deck,
+      currentStatus: 'CardDealt'
     })
   }
 
