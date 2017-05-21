@@ -7,7 +7,8 @@ const INITIAL_STATE = {
   playerState: ['fold','fold','fold','fold'],
   riverHand: [],
   lastRaise: [],
-  combinedHand: [[],[],[],[]]
+  combinedHand: [[],[],[],[]],
+  message: ['hello','test']
 }
 
 function reducer(state = INITIAL_STATE, action){
@@ -91,14 +92,14 @@ function reducer(state = INITIAL_STATE, action){
           }
         }
         console.log('combineHand',combineHand);
-        //sort the hands
+        //sort the hands least to greatest
         for(let i=0; i<combineHand.length;i++){
           if(state.playerState[i] === 'in'){
             let tempArray = [];
             let temp;
             let minIdx;
             for(let j=0; j<7;j++){
-              let min = 13;
+              let min = 14;
               for(let k=0; k<combineHand[i].length;k++){
                 if(combineHand[i][k].point<min){
                   console.log('combine hand',combineHand[i][k].point)
@@ -109,13 +110,44 @@ function reducer(state = INITIAL_STATE, action){
               }
               temp = combineHand[i].splice(minIdx,1);
               tempArray.push(temp[0]);
-              console.log(temp[0].point)
+
             }
             combineHand[i]=tempArray;
           }
 
         }
         console.log(combineHand);
+        //sort hand by suits
+        var combineHandSuit=[{spades:[],hearts:[],clubs:[],diamonds:[]},
+                             {spades:[],hearts:[],clubs:[],diamonds:[]},
+                             {spades:[],hearts:[],clubs:[],diamonds:[]},
+                             {spades:[],hearts:[],clubs:[],diamonds:[]}]
+
+        for(let i=0;i<combineHand.length;i++){
+          console.log(i);
+          if(state.playerState[i] === 'in'){
+            for(let j=0; j<combineHand[i].length;j++){
+              console.log(combineHand[i][j])
+              if (combineHand[i][j].suit === 'spades'){
+                combineHandSuit[i].spades.push(combineHand[i][j].point);
+              } else if(combineHand[i][j].suit === 'hearts'){
+                combineHandSuit[i].hearts.push(combineHand[i][j].point);
+              } else if(combineHand[i][j].suit === 'clubs'){
+                combineHandSuit[i].clubs.push(combineHand[i][j].point);
+              } else{
+                combineHandSuit[i].diamonds.push(combineHand[i][j].point);
+              }
+
+            }
+          }
+
+        }
+        console.log(combineHandSuit)
+        //start check win condition
+        let tempMessage = state.message
+
+        //check for royal straight flush
+
     }
   }
 

@@ -56,9 +56,17 @@ componentDidMount() {
     }
 
     let message='test'
-    if (this.props.message){
-      message = this.props.message
+    if (this.props.table.message.length > 0){
+      message =
+      <div>
+        {this.props.table.message.map((content, idx)=>
+          <div key={idx}>
+            {content}
+          </div>
+        )}
+      </div>
     }
+
 
     let player0ActionButton = ''
     let currentStatus = this.props.table.currentStatus;
