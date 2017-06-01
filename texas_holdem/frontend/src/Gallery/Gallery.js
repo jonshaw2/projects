@@ -16,7 +16,7 @@ componentDidMount() {
 
 
     if (this.props.category.length !== 0){
-      console.log('truthy?');
+
       category = this.props.category.map((categories, idx) =>
 
         <div key={idx} className="category" >
@@ -25,8 +25,8 @@ componentDidMount() {
           </h2>
         <div>
         {this.props.tables[categories].map((tables, idx2) =>
-            <div className="imageAndName" key={idx2}>
-            <Link to={"/tables/" + tables.id}>
+            <div  key={idx2}>
+            <Link className="imageAndName" to={"/tables/" + tables.id}>
               {tables.tablename}
             </Link>
 

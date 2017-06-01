@@ -1,4 +1,5 @@
 import $ from 'jquery';
+import BASEURL from '../baseurl';
 
 function galleryInfo(data){
 
@@ -12,7 +13,7 @@ function galleryError(resp){
 export function getGallery(){
   let asyncAction = function(dispatch){
     $.ajax({
-      url: 'http://localhost:7000/api/tables',
+      url: `${BASEURL}/api/tables`,
       method: 'get',
       dataType: 'JSON',
       contentType: 'application/json'

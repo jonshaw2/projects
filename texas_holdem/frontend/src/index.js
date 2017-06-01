@@ -11,9 +11,12 @@ import TableContainer from './Table/Table';
 import tableReducer from './Table/Table.reducer';
 import CreateAccountContainer from './CreateAccount/CreateAccount';
 import createaccountReducer from './CreateAccount/CreateAccount.reducer';
+import CreateTableContainer from './CreateTable/CreateTable';
+import createtableReducer from './CreateTable/CreateTable.reducer';
 import LoginContainer from './Login/Login';
 import loginReducer from './Login/Login.reducer';
-import { persistStore, autoRehydrate } from 'redux-persist';
+// import { persistStore, autoRehydrate } from 'redux-persist';
+import { persistStore } from 'redux-persist';
 import CookieStorage from 'redux-persist-cookie-storage';
 import * as loginActions from './Login/Login.actions';
 
@@ -23,6 +26,7 @@ const reducer = Redux.combineReducers({
   table:tableReducer,
   createUser: createaccountReducer,
   loginUser: loginReducer,
+  createTable: createtableReducer
 
 
 
@@ -51,24 +55,26 @@ class AppLayout extends React.Component {
     let accountInfo
 
     if (this.props.state.loginUser.currentToken === ''){
-      accountInfo = <div><li><Link to="/CreateAccount" activeClassName="active">Sign Up</Link></li>
-      <li><Link to="/LogIn" activeClassName="active">Log In</Link></li></div>
+      accountInfo = <div className='login_info'><Link className='login_link' to="/CreateAccount" activeClassName="active">Sign Up</Link>
+      <Link className='login_link' to="/LogIn" activeClassName="active">Log In</Link></div>
 
     } else{
 
-      accountInfo = <div>Welcome {this.props.state.loginUser.username}<br/>
-      <button onClick={this.props.logout}>Log Out </button>
+      accountInfo = <div className='login_info'>Welcome {this.props.state.loginUser.username.toUpperCase()}
+      <Link className='login_link' onClick={this.props.logout}>Log Out </Link>
       </div>
     }
 
     return(
       <div>
-      We Playing Poker Now?
 
-        <ul className="nav">
-          <li><IndexLink to="/" activeClassName="active">Home</IndexLink></li>
-          {accountInfo}
-        </ul>
+      We Playing Poker Now?
+      {accountInfo}
+
+        <div className='home_links'>
+          <IndexLink className="home_url" to="/" activeClassName="active">Home</IndexLink>
+          <IndexLink className="create_table" to="/CreateTable" activeClassName="active">Create Table</IndexLink>
+        </div>
 
         <div>
           {this.props.children}
@@ -96,8 +102,8 @@ const AppLayoutContainer = ReactRedux.connect(
 
 
 let HomePage = ({children}) =>
-  <div>
-    Just a simple store?
+  <div className="home_children">
+    Join a simple table
 
     <div>
     {children}
@@ -129,6 +135,7 @@ ReactDOM.render(
       <Route path="/tables/:id" component={TableContainer}/>
       <Route path="/LogIn" component={LoginContainer}/>
       <Route path="/CreateAccount" component={CreateAccountContainer}/>
+      <Route path="/CreateTable" component={CreateTableContainer}/>
 
     </Route>
   </Router>

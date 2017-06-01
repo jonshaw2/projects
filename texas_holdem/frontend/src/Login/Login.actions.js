@@ -1,5 +1,6 @@
 import $ from 'jquery';
 import { hashHistory} from 'react-router';
+import BASEURL from '../baseurl';
 
 function wikiError(resp){
   console.log('error:', resp);
@@ -23,12 +24,15 @@ export function logout(){
   return {type: 'logOut'}
 }
 
+export function storeData(){
+  console.log('in the store data');
+}
 export function submitLogin(username, password){
   console.log(username);
   console.log(password);
   let asyncAction = function(dispatch){
     $.ajax({
-      url: 'http://localhost:7000/api/user/login',
+      url: `${BASEURL}/api/user/login`,
       data: JSON.stringify({
         username: username,
         password: password

@@ -2,22 +2,105 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  background-color: black;
+  background-image: url("images/background2.jpg");
+  background-repeat: no-repeat;
+  background-size: auto;
 }
 
+.home_url{
+  padding: 5px;
+  background-color: black;
+  width: 100%;
+  font-size: 20px;
+  color: orange;
+  text-decoration: none;
+}
 
+.signup{
+  color: white;
+}
+
+.create_table{
+  padding: 5px;
+  background-color: black;
+  width: 100%;
+  font-size: 20px;
+  color: orange;
+  text-decoration: none;
+}
+
+.home_link{
+  float: left;
+  margin: 15px;
+  width: 100%;
+  background-color: black;
+}
+
+.home_url:visited{
+  text-decoration: none;
+  color: orange
+}
+
+.home_children{
+  clear:left;
+  margin-top: 10px;
+  color: white;
+
+}
+
+.imageAndName{
+  text-decoration: none;
+  color: orange;
+
+}
+
+.imageAndName:link{
+  text-decoration: none;
+  color: orange;
+}
+
+.imageAndName:visited{
+  text-decoration: none;
+  color: orange;
+
+}
+
+.login_info{
+  display: inline-block;
+  float: right;
+  background-color: black;
+  width: 100%;
+  text-align: right;
+  height: 50px;
+  color: white;
+  font-size: 20px;
+}
+
+.login_link{
+  text-decoration: none;
+  color: orange;
+  padding: 5px;
+}
+
+.login_link:visited {
+  text-decoration: none;
+  color: orange;
+}
 
 .product_image{
-
 text-align: center;
-
 }
-.imageAndName{
+
+/*.imageAndName{
   width: 200px;
   padding: 20px;
 float: left;
 text-align: center;
-}
+}*/
+
 .category{
+  color: red;
   padding-left: 50px;
   width: 800px;
   clear: left;
@@ -32,43 +115,119 @@ text-align: center;
 
 .riverCards{
   position: absolute;
-  width: 50%;
+  width: 70%;
   min-width: 375px;
-  margin: 200px 25% 0 25%;
+  margin: 160px 25% 0 25%;
   background-color: blue;
 }
+
+@media (max-width: 630px){
+  .riverCards{
+    position: absolute;
+    width: 70%;
+    min-width: 375px;
+    margin: 180px 0 0 5px;
+    background-color: blue;
+  }
+}
+
 .riverCards img{
-  padding-left: 10px;
+  padding-left: 5px;
 }
 
 .player1{
   position: absolute;
   width: auto;
-  min-width: 150px;
+  min-width: 200px;
   margin: 10px 40% 0 40%;
-  background-color: red;
+
+}
+
+@media (max-width: 630px){
+  .player1{
+    position: absolute;
+    width: auto;
+    min-width: 200px;
+    margin: 10px 0 0 5%;
+
+  }
 }
 
 .player1 img{
-  padding-right: 10px;
+  padding-right: 5px;
 }
 
 .player0{
   position: absolute;
   width: auto;
-  min-width: 150px;
-  margin: 0 40% 0 40%;
-  background-color: red;
+  min-width: 200px;
+  margin: 0 40% 10px 40%;
+
   bottom: 0;
 }
 
+@media (max-width: 630px) {
+  .player0{
+    position: absolute;
+    width: auto;
+    min-width: 200px;
+    margin: 0 0px 10px 5%;
+
+    bottom: 0;
+  }
+}
+
+
 .player0 img{
-  padding-right: 10px;
+  padding-right: 5px;
 }
 
 .tableMessage{
   width: 100%;
+
   background-color: gray;
-  height: 100px;
+  min-height: 100px;
+  height: auto;
   text-align: center;
+}
+
+.dealButton{
+  position: absolute;
+  width: 10%;
+  margin: 200px 45% 0 45%;
+  background-color: white;
+
+}
+
+.player0Pot{
+  position: absolute;
+  padding: 350px 0 0 0;
+  padding-right: 25px;
+  right: 0px;
+}
+
+.player1Pot{
+  position: absolute;
+  padding: 50px 0 0 0;
+  padding-right: 25px;
+  right: 0px;
+}
+
+
+.Pot{
+  position: absolute;
+  width: 500px;
+  margin: 140px 25% 0 25%;
+  background-color: teal;
+  font-size: 20px;
+}
+
+@media (max-width: 630px){
+  .Pot{
+    position: absolute;
+    width: 500px;
+    margin: 170px 0 0 5px;
+    background-color: teal;
+    font-size: 20px;
+  }
 }

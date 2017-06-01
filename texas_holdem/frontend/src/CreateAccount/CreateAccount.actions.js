@@ -1,5 +1,6 @@
 import $ from 'jquery';
 import { hashHistory} from 'react-router';
+import BASEURL from '../baseurl';
 
 function accountRedirect(){
   hashHistory.push('/');
@@ -29,7 +30,7 @@ export function changePassword(password){
 export function createAccount(username, password, name, email){
   let asyncAction = function(dispatch){
     $.ajax({
-      url: 'http://localhost:7000/api/user/signup',
+      url: `${BASEURL}/api/user/signup`,
       data: JSON.stringify({
         username: username,
         name: name,

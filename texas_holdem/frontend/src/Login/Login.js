@@ -7,7 +7,7 @@ class Login extends React.Component {
     let username = this.props.loginUser.username;
     let password = this.props.loginUser.password;
     return (
-      <div>
+      <div className='signup'>
       <h3>Login</h3>
         Username : <input type="text" value={username} onChange={event=> this.props.changeUsername(event.target.value)}/><br/>
         Password   : <input type="password" value={password} onChange={event=> this.props.changePassword(event.target.value)}/><br/>
